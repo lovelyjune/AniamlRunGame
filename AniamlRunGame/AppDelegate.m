@@ -6,17 +6,25 @@
 //  Copyright © 2017年 yingxin ye. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
+#import "HorseStageViewCtrl.h"
 
 @interface AppDelegate ()
-
+{
+    HorseStageViewCtrl * _horseStageViewCtl;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _horseStageViewCtl = [[HorseStageViewCtrl alloc]init];
+    [self.window setRootViewController:_horseStageViewCtl];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
